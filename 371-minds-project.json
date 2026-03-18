@@ -8,7 +8,7 @@
       "name": "Setup & Infrastructure",
       "status": "In Progress",
       "tasks": [
-        {"id": "1.1", "name": "Create GitHub repository", "status": "To-Do", "assigned_to": null, "priority": 10},
+        {"id": "1.1", "name": "Create GitHub repository", "status": "In Progress", "assigned_to": "DevOps Agent", "priority": 10},
         {"id": "1.2", "name": "Deploy Akash container", "status": "To-Do", "assigned_to": null, "priority": 9},
         {"id": "1.3", "name": "Configure Porkbun DNS", "status": "To-Do", "assigned_to": null, "priority": 8},
         {"id": "1.4", "name": "Setup puter.js serverless", "status": "To-Do", "assigned_to": null, "priority": 8},
