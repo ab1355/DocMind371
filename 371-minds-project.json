@@ -26,7 +26,8 @@
         {"id": "2.2", "name": "Integrate Creem.io payments", "status": "To-Do", "assigned_to": null, "priority": 10},
         {"id": "2.3", "name": "Develop OSINT engine", "status": "To-Do", "assigned_to": null, "priority": 8},
         {"id": "2.4", "name": "Build audit generation logic", "status": "To-Do", "assigned_to": null, "priority": 8},
-        {"id": "2.5", "name": "Create campaign templates", "status": "To-Do", "assigned_to": null, "priority": 7}
+        {"id": "2.5", "name": "Create campaign templates", "status": "To-Do", "assigned_to": null, "priority": 7},
+        {"id": "2.6", "name": "Implement Raft-based Distributed State Management", "status": "To-Do", "assigned_to": null, "priority": 10}
       ]
     },
     {
