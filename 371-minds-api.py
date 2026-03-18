@@ -1,11 +1,12 @@
 import json
 import os
 from datetime import datetime
+from src.raft.node import RaftNode
+from src.raft.state_machine import Command, CommandType
 
 class Project:
-    def __init__(self, project_file="371-minds-project.json"):
-        self.project_file = project_file
-        self.data = self.load()
+    def __init__(self, node_id="node1", peers=[]):
+        self.raft_node = RaftNode(node_id, peers)
 
     def load(self):
         if os.path.exists(self.project_file):
@@ -25,14 +26,12 @@ class Project:
         return None
 
     def assign_task(self, task_id, agent_name):
-        for phase in self.data.get("phases", []):
-            for task in phase.get("tasks", []):
-                if task["id"] == task_id:
-                    task["status"] = "In Progress"
-                    task["assigned_to"] = agent_name
-                    self.save()
-                    return True
-        return False
+        command = Command(
+            type=CommandType.ASSIGN_TASK,
+            payload={"task_id": task_id, "assigned_to": agent_name}
+        )
+        self.raft_node.submit_command(command)
+        return True
 
     def update_task_status(self, task_id, status):
         for phase in self.data.get("phases", []):
@@ -44,15 +43,12 @@ class Project:
         return False
 
     def complete_task(self, task_id, notes=""):
-        for phase in self.data.get("phases", []):
-            for task in phase.get("tasks", []):
-                if task["id"] == task_id:
-                    task["status"] = "Complete"
-                    task["notes"] = notes
-                    task["completed_at"] = datetime.now().isoformat()
-                    self.save()
-                    return True
-        return False
+        command = Command(
+            type=CommandType.COMPLETE_TASK,
+            payload={"task_id": task_id}
+        )
+        self.raft_node.submit_command(command)
+        return True
 
     def block_task(self, task_id, reason=""):
         for phase in self.data.get("phases", []):
