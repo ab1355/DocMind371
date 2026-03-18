@@ -12,7 +12,9 @@
         {"id": "1.2", "name": "Deploy Akash container", "status": "To-Do", "assigned_to": null, "priority": 9},
         {"id": "1.3", "name": "Configure Porkbun DNS", "status": "To-Do", "assigned_to": null, "priority": 8},
         {"id": "1.4", "name": "Setup puter.js serverless", "status": "To-Do", "assigned_to": null, "priority": 8},
-        {"id": "1.5", "name": "Generate SSH keys", "status": "To-Do", "assigned_to": null, "priority": 7}
+        {"id": "1.5", "name": "Generate SSH keys", "status": "To-Do", "assigned_to": null, "priority": 7},
+        {"id": "1.6", "name": "Deploy System Monitor", "status": "To-Do", "assigned_to": null, "priority": 9},
+        {"id": "1.7", "name": "Deploy Resource Optimizer", "status": "To-Do", "assigned_to": null, "priority": 9}
       ]
     },
     {
